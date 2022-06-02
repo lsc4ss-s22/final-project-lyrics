@@ -1,7 +1,6 @@
 
 import pandas as pd
 import csv
-from tqdm import tqdm
 import re
 from lyricsgenius import Genius
 from mpi4py import MPI
@@ -25,7 +24,7 @@ def scraper(years, file_name):
         output.writerow(['Year', 'Artist', 'Song Name', 'Lyrics'])
         for year in range(years[0], years[1]):
             year_df = sampled_df[sampled_df['year'] == year]
-            for i in tqdm(range(3)):
+            for i in range(150):
                 song_name = year_df.iloc[i, 0]
                 song_artist = re.split('& | Featuring | And', year_df.iloc[i, 1]) + [year_df.iloc[i, 1]]
                 try:
@@ -33,7 +32,6 @@ def scraper(years, file_name):
                         if genius.search_artist(j , max_songs=1, sort="title"):
                             artist = genius.search_artist(j , max_songs=1, sort="title")
                             try:
-                                print('here')
                                 song = artist.song(song_name)
                                 lyrics = song.lyrics
                                 output.writerow([year, year_df.iloc[i, 1], song_name, lyrics])
@@ -53,3 +51,4 @@ name = MPI.Get_processor_name()
 base = 1958 + 4 * rank
 years = (base, base + 4)
 scraper(years, file_name=f'part{rank}')
+print(f'part{rank} done!')
