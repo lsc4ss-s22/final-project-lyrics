@@ -1,4 +1,4 @@
-# final-project-lyrics
+# Final project_MACS30123_Lyrics Analysis.
 This is the GitHub repository for the final project of MACS 30123 Large Scale Computing.
 
 Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
