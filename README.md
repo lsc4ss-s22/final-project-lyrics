@@ -12,19 +12,24 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 ## Structure of Project   
 
-1. Data collection: 
-     Parallel scraping
-     Upload data to S3
+1. Data collection: Baotong Zhang
+   * Serial scraping
+   * Parallel scraping
 
 2. Data cleaning: Dask
 
 3. Data Statistics and plot: Dask
 
-4. NLP and Machine Learning with Spark:    
-     Process the lyrics text into features
-     Train LDA Topic Model to extract topics from lyrics text 
+4. NLP and Machine Learning with Spark: 
+     * Topic Model 
+       * Process the lyrics text into features
+       * Train LDA Topic Model to extract topics from lyrics text 
+     * Prediction: Baotong Zhang
+       * Merge the cleaned data with weeks-on-board target
+       * Upload merged data to S3
+       * Train a logistic regression and report the classification outcomes
 
-5. Summary and Analysis
+6. Summary and Analysis
 
 
 ## Data 
