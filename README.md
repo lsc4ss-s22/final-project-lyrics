@@ -46,6 +46,25 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 #### Main codes:
 ```python
+import pandas as pd
+import csv
+import re
+from lyricsgenius import Genius
+from mpi4py import MPI
+
+songs = pd.read_csv('billboard.csv')
+songs['year'] = pd.DatetimeIndex(songs['date']).year
+songs.drop(['date', 'rank', 'last-week', 'peak-rank', 'weeks-on-board'], axis=1, inplace=True)
+songs.drop_duplicates(inplace=True)
+sampled_df = songs.groupby('year').sample(n=150, random_state=42, replace=False)
+
+token = 'JyD9-_LdqpyHilUA3esIXZt0Dp4Ftcc4TMo9cq7b4q2zLVfDDR1AYtIoXsXnf1DS'
+genius = Genius(token)
+genius.verbose = False # Turn off status messages
+genius.remove_section_headers = True # Remove section headers (e.g. [Chorus]) from lyrics when searching
+genius.skip_non_songs = False # Include hits thought to be non-songs (e.g. track lists)
+genius.excluded_terms = ["(Remix)", "(Live)"] # Exclude songs with these words in their title
+
 def scraper(years, file_name):
     with open(file_name+'.csv', 'w', newline="", encoding='utf-8') as csvfile:
         output = csv.writer(csvfile)
@@ -75,6 +94,11 @@ comm = MPI.COMM_WORLD
 size = comm.Get_size()
 rank = comm.Get_rank()
 name = MPI.Get_processor_name()
+
+base = 1958 + 4 * rank
+years = (base, base + 4)
+scraper(years, file_name=f'part{rank}')
+print(f'part{rank} done!')
 ```
 
 ### 2. Data Cleaning by Dask 
