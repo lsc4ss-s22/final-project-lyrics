@@ -45,7 +45,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 
 ## Results   
-### Prediction
+### Prediction: Baotong Zhang
 #### Code: 
 > Merge and Upload: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_04_Prediction/Data_Merge_Upload.ipynb
 
