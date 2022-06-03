@@ -8,6 +8,21 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 ## Large-Scale Computing Strategies    
 
+##### Parellel Scraping
+
+Our top 100 songs dataset are from Kaggle(https://www.kaggle.com/datasets/dhruvildave/billboard-the-hot-100-songs) and our lyrics are scraped from the 
+Genius API and LyricsGenius package. We tried to use mpi4py to parallel this scrapping process that we distributed the whole task to 16 processes and each process was going to scrap the data for four years. For example, process 0 scrapped data from 1958 to 1961. 
+
+##### Dask Data Cleaning and Statistics
+
+As thte raw data contains non-English songs, unreadable and messy unmatched lyrics with the songs, we did our data cleaning on Dask. After the data cleaning, we also did the data statistics and plot overview analysis on Dask
+
+##### Spark Topic Modeling & Prediction
+
+Considering we have more than 6000 data of lyrics text, and the features produced by transforming lyrics could be a large amount, it’s ideal and efficient to make use of PySpark on AWS to deal with the data. 
+Firstly, we store the data in S3 bucket and read them in PySpark. To convert the text into features for model, we applied pyspark.ml.feature.Tokenizer and pyspark.ml.feature.CountVectorizer in PySpark. With features for text, we resort to LDAtopic model used to extract topics from lyrics text. 
+
+We did our prediction job on AWS by using Pyspark: the target label is whether a song is long-lasting on the board(>=16 weeks); and the Features are Length oFf lyrics; Length of name; Sentiment of lyrics by Spark NLP; Vectorized lyrics; Vectorized name. 
 
 
 ## Structure of Project   
