@@ -24,6 +24,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
      * Topic Model 
        * Process the lyrics text into features
        * Train LDA Topic Model to extract topics from lyrics text 
+       * WordCloud Visualization
      * Prediction
        * Merge the cleaned data with weeks-on-board target
        * Upload merged data to S3
