@@ -282,7 +282,7 @@ def get_topics(df):
 ```
 
 #### Main Results:
-<img src="Figure/Topic.png">
+<img src="Figure/Topic.png" width=400>
 
 <img src="Figure/1950.png">
 <img src="Figure/1960.png">
