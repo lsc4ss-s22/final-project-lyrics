@@ -57,7 +57,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 * Features:
   * Length oFf lyrics; Length of name 
    Sentiment of lyrics by Spark NLP 
-  * ectorized lyrics; Vectorized name 
+  * Vectorized lyrics; Vectorized name 
 * Result: AUC = 0.65
 <img src="AUC.png">
 * As we could see, the results are acceptable with sparse representation of our features.
