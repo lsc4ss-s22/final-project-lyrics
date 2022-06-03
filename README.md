@@ -12,7 +12,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 ## Structure of Project   
 
-1. Data collection: Baotong Zhang
+1. Data collection
    * Serial scraping
    * Parallel scraping
 
@@ -24,7 +24,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
      * Topic Model 
        * Process the lyrics text into features
        * Train LDA Topic Model to extract topics from lyrics text 
-     * Prediction: Baotong Zhang
+     * Prediction
        * Merge the cleaned data with weeks-on-board target
        * Upload merged data to S3
        * Train a logistic regression and report the classification outcomes
@@ -33,7 +33,7 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 
 ## Data 
-### Data Collection
+### Data Collection: Baotong Zhang
 #### Code: 
 > 
 > Serial: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_01_Data_Collection/lyrics_scrapping(serial).ipynb
@@ -46,7 +46,10 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 ## Results   
 ### Prediction
-> Code: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_04_Prediction/Task1_prediction.ipynb
+#### Code: 
+> Merge and Upload: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_04_Prediction/Data_Merge_Upload.ipynb
+
+> Model Training: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_04_Prediction/Task1_prediction.ipynb
 
 > Note: We used Pyspark on AWS because after vectorizing the lyrics, the number of features exploded. 
 * We did our prediction job on AWS by using Pyspark
