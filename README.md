@@ -15,7 +15,7 @@ Genius API and LyricsGenius package. We tried to use mpi4py to parallel this scr
 
 ##### Dask Data Cleaning and Statistics
 
-As thte raw data contains non-English songs, unreadable and messy unmatched lyrics with the songs, we did our data cleaning on Dask. After the data cleaning, we also did the data statistics and plot overview analysis on Dask
+As the raw data contains non-English songs, unreadable and messy unmatched lyrics with the songs, we did our data cleaning on Dask. After the data cleaning, we also did the data statistics and plot overview analysis on Dask
 
 ##### Spark Topic Modeling & Prediction
 
