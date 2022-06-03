@@ -22,15 +22,32 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 
 4. NLP and Machine Learning with Spark:    
      Process the lyrics text into features
-     Train LDA Topic Model to extract topics fron lyrics text 
+     Train LDA Topic Model to extract topics from lyrics text 
 
 5. Summary and Analysis
 
 
-## Data   
+## Data 
+### Data Collection
+> Code: 
+* We used a data set from Kaggle to provide us with the song information on Billboard from 1958 and 2021. And then, we scrapped the data using Genius API and LyricsGenius package. We tried to use mpi4py to parallel this scrapping process: We distributed the whole task to 16 processes and each process was going to scrap the data for four years. For example, process 0 scrapped data from 1958 to 1961. Therefore we scrapped the data from 1958 to 2021.
+* However, the issue is that we always got banned after the parallel scrapper had been going for a while even though we set a sleep time. The reason might be the website limits the number of times that we request at the same time(in our case, there are sixteen requests at the same time).
+* Therefore, we used the data from the serial scrapper. However, the parallel scrapper worked fine on Baotong's compuer(16 cores CPU).
 
 
 ## Results   
+### Prediction
+> Code: 
+> Note: We used Pyspark on AWS because after vectorizing the lyrics, the number of features exploded. 
+* We did our prediction job on AWS by using Pyspark
+* Target: whether a song is long-lasting on the board(>=16 weeks)
+* Features:
+  * Length oFf lyrics; Length of name 
+   Sentiment of lyrics by Spark NLP 
+  * ectorized lyrics; Vectorized name 
+* Result: AUC = 0.65
+<img src="AUC.png">
+* As we could see, the results are acceptable with sparse representation of our features.
 
 
 ## Summarization
