@@ -150,7 +150,7 @@ lyrics_raw['clean_text'] = lyrics_raw['text_nonpuc'].apply(lambda x: " ".join(x 
 > https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_03_Data_Overview/cleaned_data_overview_dask.ipynb
 > 
 * From the previous step, we have obtained more than five thousand songs data. To better understand the dataset to analyse, we need to make an overview on the data and have a basic knowledge about it.
-* In this step, we complete the overview with the help of one singer dataset posted on Kaggle, which include detailed information of each singer such as music genre and their country. With this dataset, we can see an development trend over decades.
+* In this step, we complete the overview with the help of one singer dataset posted on Kaggle (https://www.kaggle.com/datasets/pieca111/music-artists-popularity?resource=download), which include detailed information of each singer such as music genre and their country. With this dataset, we can see an development trend over decades.
 * In the end, we got the most famous superstar, singer distribution trend, music genre popularity development and the overall competition level changes over decades.
 
 #### Main Results:
