@@ -125,7 +125,7 @@ print(f'part{rank} done!')
 
 > https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_02_Data_Cleaning/lyrics_data_cleaning_dask.ipynb
 
-* The raw dataset we scrapped is messy and full of meaningless noise in the website. So we decided to use Dask for further clean using Dask, which could improve the efficiency than local computer. 
+* The raw dataset we scrapped is messy and full of meaningless noise in the website. So we decided to use Dask for further clean, which could improve the efficiency than local computer. 
 * For standardize the input language and facilitate nlp learning, We first remove non-english songs. remove songs with unmatched name and lyrics, and also remove stop words (that we collected both from packages and our own identification) to accurately grasp the topic information from the lyrics. 
 * Finally, we compiled the cleaned lyrics for each year, and every 10 years. We sent the data into our group's S3 database for further analysis.
 
