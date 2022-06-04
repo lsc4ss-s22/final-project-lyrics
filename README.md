@@ -19,8 +19,7 @@ As the raw data contains non-English songs, unreadable and messy unmatched lyric
 
 ##### Spark Topic Modeling & Prediction
 
-Considering we have more than 6000 data of lyrics text, and the features produced by transforming lyrics could be a large amount, it’s ideal and efficient to make use of PySpark on AWS to deal with the data. 
-Firstly, we store the data in S3 bucket and read them in PySpark. To convert the text into features for model, we applied pyspark.ml.feature.Tokenizer and pyspark.ml.feature.CountVectorizer in PySpark. With features for text, we resort to LDAtopic model used to extract topics from lyrics text. 
+Considering we have more than 6000 data of lyrics text, and the features produced by transforming lyrics could be a large amount, it’s ideal and efficient to make use of PySpark on AWS to deal with the data. Firstly, we store the data in S3 bucket and read them in PySpark. To convert the text into features for model, we applied pyspark.ml.feature.Tokenizer and pyspark.ml.feature.CountVectorizer in PySpark. With features for text, we resort to LDAtopic model used to extract topics from lyrics text. 
 
 We did our prediction job on AWS by using Pyspark: the target label is whether a song is long-lasting on the board(>=16 weeks); and the Features are Length oFf lyrics; Length of name; Sentiment of lyrics by Spark NLP; Vectorized lyrics; Vectorized name. 
 
@@ -178,9 +177,11 @@ lyrics_raw['clean_text'] = lyrics_raw['text_nonpuc'].apply(lambda x: " ".join(x 
 > 
 > Topic model and Visualization: https://github.com/lsc4ss-s22/final-project-lyrics/blob/main/Code/Part_04_Topic_Model_Visualization/topic_model_lyrics_visualization.ipynb
 
-* From the previous step, we have obtained more than five thousand songs data. To better understand the dataset to analyse, we need to make an overview on the data and have a basic knowledge about it.
-* In this step, we complete the overview with the help of one singer dataset posted on Kaggle, which include detailed information of each singer such as music genre and their country. With this dataset, we can see an development trend over decades.
-* In the end, we got the most famous superstar, singer distribution trend, music genre popularity development and the overall competition level changes over decades.
+* To convert the text into features for model, we apply Document Assembler,Tokenizer, Lemmatizer and Finisher in pyspark.ml.feature  to process the natural language and employ pyspark.ml.feature.CountVectorizer in PySpark to get features. 
+* Since knowing topics of the lyrics is important for us to know the pop trend conveyed by songs, with features for text, we resort to LDA topic model to extract topics from lyrics text. LDA, Latent Dirichlet Allocation, is an unsupervised learning algorithm that takes the document text as a generated results by words. The model firstly picks a number of topics and then identifies a series of words and corresponding weights for each topic.
+* To compare the change in topics of lyrics from year to year, and from decade to decade, the cleaned data of top 100 songs for each year and every ten years from 1958-2021 are plugged into the natural language process pipeline and topic model.
+
+
 
 #### Main codes:
 ```python
