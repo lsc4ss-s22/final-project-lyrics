@@ -7,6 +7,10 @@ Author: Baotong Zhang, Guangyuan Chen, Xin Li, Zhiyun Hu
 ## Social Science Research Questions    
 
 
+Songs are always related to culture tradition. Starting from 1950s, American pop music impacted by the social events. Along with the society transformation, the concept in the lyrics also changed correspondingly. Christenson et al used R sturcchange software to study the themes that embedded in the lyrics of 1,040 U.S. top-40 songs from 1960-2010. They found out that the predominant topic of pop music remains romantic and sexual relationship, while the proportion of sex-related aspects of relationships increased sharply. Besides, references to lifestyle such as dancing, alcohol and drugs increased, and other themes such as social and political movement, race and ethnicity does not occur frequently. (Christenson et al, 2018) 
+
+Our research question is: How lyrics can reflect the change and trend in pop culture from 1958-2021? We will analyze the Billboard top annual 100 songs (lyrics and artists) from 1958 to 2021 using Topic Model to dig out the change in topics of lyrics on the development of music genres in different decades, singers’ country distribution, and the overall competition over decades, etc. We will also use our analysis to predict if a song is long-lasting on the Billboard or not. As we implemented large-scale computing strategies and analyzed from single-year period and decades period on what are the top frequent words and the topics, our research will supplement the current lyrics and pop culture relationship research. 
+
 ## Large-Scale Computing Strategies    
 
 ##### Parellel Scraping
