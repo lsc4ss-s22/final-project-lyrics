@@ -358,7 +358,15 @@ def get_topics(df):
 * As we could see, the results are acceptable with sparse representation of our features.
 
 
-## Summarization
+## Summary
+From the result of topic analysis model and word visualization, we can see a significant culture trend from lyrics data. In the previous decades, most of listed songs convey love, friendship and beautiful icons, which is similar as what Christenson found out in the study. The most frequent topics they sing for are love, light , time, which are positive and energetic stuffs in the world. However, in recent decades, we can see a significant preference of dirty words in popular songs, which are shown in wordclouds for 2010s and 2020s. From the data overview part, we can also see the development of rap songs is growing very fast in recent years, with the popularity of rock music decreased gradually. These trends all indicate a significant grow of black culture reflected on American music field. Besides, it reflect a more widespread acceptance of black culture in the society and even become a main stream. 
+
+However, on the other hand, it is shown that people become more straightforward to express themselves but most of these feelings are passive, offensive and even violent. It should be of great concern that the whole society should pay more attention on severe problems long existing in the world, which can be wealth gap, violence and racialism. Fortunately, we can grasp these trend and people's willingness to make changes and hope the government will take actions to solve these issues, giving us a better life in the world.
 
 
-## Reference    
+## Reference
+
+1. https://spark.apache.org/docs/latest/ml-features#countvectorizer
+2. https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3741049972324885/3783546674231782/4413065072037724/latest.html
+3. Christenson, P. G., de Haan-Rietdijk, S., Roberts, D. F., & ter Bogt, T. F. M. (2019). What has America been singing about? Trends in themes in the U.S. top-40 songs: 1960–2010. Psychology of Music, 47(2), 194–212. https://doi.org/10.1177/0305735617748205
+4. JinFei Zhu's GitHub: https://github.com/lsc4ss-s21/large-scale-personal-finance
